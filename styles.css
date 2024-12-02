@@ -1,0 +1,790 @@
+/* 通用样式 */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    padding: 0;
+    background-color: #FFFFFF; /* 白色 */
+    color: #333333; /* 深灰色 */
+}
+
+header {
+    background-color: #0077cc;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: #004E7C; /* 深海蓝 */
+    border-bottom: 2px solid #004E7C;
+}
+
+main {
+    text-align: center;
+    padding-top: 20px;
+}
+
+footer {
+    background: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 首页 */
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* 头部导航栏样式 */
+.header {
+    background-color: #0077cc;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* 头部装饰性浮动图标 */
+.header-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 不接受鼠标事件 */
+}
+
+.decor-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: floatAnimation 3s infinite ease-in-out alternate;
+}
+
+.decor-item:nth-child(1) {
+    top: 20%;
+    left: 10%;
+}
+
+.decor-item:nth-child(2) {
+    top: 50%;
+    left: 50%;
+}
+
+.decor-item:nth-child(3) {
+    top: 80%;
+    left: 90%;
+}
+
+.decor-item:nth-child(4) {
+    top: 30%;
+    left: 80%;
+}
+
+.decor-item:nth-child(5) {
+    top: 60%;
+    left: 20%;
+}
+
+@keyframes floatAnimation {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0.7;
+    }
+}
+/* 分割线样式 */
+.header-divider {
+    height: 3px;
+    background-color: #fff;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.header:hover .header-divider {
+    width: 100%;
+}
+
+
+/* 轮播图部分和特性部分的样式保持不变 */
+#slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    height: 300px; /* 设置固定高度 */
+}
+
+.slide.active {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 95px;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%; /* 图片填充其父元素的高度 */
+    object-fit: cover; /* 确保图片不变形，并覆盖整个区域 */
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.slide img:hover {
+    opacity: 0.8; /* 悬停时降低透明度 */
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* 动画效果 */
+.fade {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* 轮播图按钮 */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+/* 新增的特性部分 */
+#features {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 50px 0;
+}
+
+.feature {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 250px; /* 调整高度 */
+    max-width: 300px; /* 降低宽度 */
+    margin: 0 10px; /* 增加间距 */
+}
+
+.feature h3 {
+    font-size: 1.8rem; /* 提高标题字体大小 */
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 1.1rem; /* 提高内容字体大小 */
+    color: #666;
+}
+
+.feature:hover {
+    transform: translateY(-8px); /* 悬停时向上移动8px */
+}
+@keyframes bubbles {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50%);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+/* 服务项目页面 */
+#services {
+    padding: 20px;
+    text-align: center;
+   background-image: url();
+   background-size: cover;
+    
+}
+
+
+.services-intro {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.service-item {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 2.5%;
+    background: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    background-color: #004E7C; /* 深海蓝 */
+}
+
+.service-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.service-item h3 {
+    margin-top: 10px;
+}
+
+.service-item p {
+    margin-top: 10px;
+}
+
+
+.pricing-section, .booking-section {
+    text-align: center;
+    flex: 1 1 calc(50% - 40px); /* Adjust the width */
+    margin-bottom: 40px;
+}
+
+.pricing-table, .booking-form {
+    background-color: #0077be;
+    padding: 20px;
+    border: 2px solid #0077be;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    color: #ffffff;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.pricing-table:hover, .booking-form:hover {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #0077be;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #ffffff;
+}
+
+.pricing-table th {
+    background-color: #005f99;
+    font-weight: bold;
+}
+
+.pricing-table td {
+    background-color: #0077be;
+}
+
+.pricing-table:hover th, .pricing-table:hover td {
+    background-color: #ffffff;
+    color: #0077be;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: inherit;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form select,
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+.booking-form input[type="text"]:focus,
+.booking-form input[type="email"]:focus,
+.booking-form select:focus,
+.booking-form input[type="date"]:focus,
+.booking-form input[type="time"]:focus,
+.booking-form textarea:focus {
+    border-color: #0077be;
+}
+
+.booking-form button {
+    background-color: #0077be;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.booking-form button:hover {
+    background-color: #ffffff;
+    color: #0077be;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #0077be;
+    color: #ffffff;
+    width: 100%;
+    position:center;
+}
+.comments-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #0077be;
+    border: 2px solid #0077be;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    color: #ffffff;
+}
+
+.comments-section h2 {
+    margin-bottom: 20px;
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-item {
+    background-color: #0077be;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.comment-item p {
+    margin: 5px 0;
+}
+
+
+
+/* 作品展示页面 */
+/* 通用样式 */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #0077be;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+
+main {
+    padding: 20px;
+}
+
+#portfolio {
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 2.5%;
+    background: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    background-color: #FFFFFF; /* 白色 */
+    color: #0077B6; /* 海洋蓝 */
+}
+
+.portfolio-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.portfolio-item h3 {
+    margin-top: 10px;
+}
+
+#comments-section,
+#comment-form-section {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 2.5%;
+    background-color: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    vertical-align: top; /* Align side by side */
+}
+
+#comments-section:hover,
+#comment-form-section:hover {
+    transform: scale(1.05);
+    background-color: #FFFFFF; /* 白色 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #0077B6; /* 海洋蓝 */
+}
+
+#comments-list {
+    margin-bottom: 20px;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#comment-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 600px;
+}
+
+#comment-form input[type="text"],
+#comment-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+#comment-form button {
+    background-color: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: auto;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#comment-form button:hover {
+    background-color: #ffffff;
+    color: #0077B6;
+}
+
+.comment-item {
+    background-color: #0077be; /* 深海蓝 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.comment-item p {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+
+
+
+/* 联系我们页面 */
+/* 联系我们页面 */
+/* 联系我们页面 */
+#contact {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-form {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 2.5%;
+    background: #0077B6; /* 海洋蓝 */
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: slideInLeft 1s ease; /* 添加入场动画 */
+    border-radius: 12px; /* 圆润边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 8px; /* 圆润边框 */
+    border: 1px solid #FFFFFF; /* 白色边框 */
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明白色背景 */
+    color: #FFFFFF;
+}
+
+.contact-form button {
+    background: #004E7C; /* 深海蓝 */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px; /* 圆润边框 */
+}
+
+.contact-form button:hover {
+    background: #003D5C; /* 更深的蓝色 */
+}
+
+/* 列表添加效果 */
+#features {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 50px 0;
+}
+
+.feature {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 250px; /* 调整高度 */
+    max-width: 300px; /* 降低宽度 */
+    margin: 0 10px; /* 增加间距 */
+    animation: slideInRight 1s ease; /* 添加入场动画 */
+}
+
+.feature h3 {
+    font-size: 1.8rem; /* 提高标题字体大小 */
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 1.1rem; /* 提高内容字体大小 */
+    color: #666;
+}
+
+.feature:hover {
+    transform: translateY(-8px); /* 悬停时向上移动8px */
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.map {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.map iframe {
+    width: 100%;
+    height: 400px; /* 适当放大地图大小 */
+    border: none;
+}
+
+.map img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* 圆润边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+

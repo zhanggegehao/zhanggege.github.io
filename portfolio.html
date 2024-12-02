@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            background-image: url(images/background2.webp);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="services.html">服务项目</a></li>
+                <li><a href="portfolio.html">作品展示</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="portfolio">
+            <h2>我们的作品</h2>
+            <div class="portfolio-item">
+                <img src="images/portfolio1.jpg" alt="作品1">
+                <h3>看小以考及格的开心的笑(*^_^*)</h3>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio2.jpg" alt="作品2">
+                <h3>看孩子考好后多么幸福的家庭</h3>
+            </div>
+        </section>
+
+        <section id="comments-section">
+            <div id="comments-list">
+                <h2>留言列表</h2>
+                <!-- 留言会实时显示在这里 -->
+            </div>
+        </section>
+
+        <section id="comment-form-section" style="margin-bottom: 70px;">
+            <form id="comment-form">
+                <h2>写留言</h2>
+                <label for="username">姓名:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="comment">留言:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <button type="submit">提交留言</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 期末工作室. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const commentForm = document.getElementById("comment-form");
+            const commentsList = document.getElementById("comments-list");
+
+            commentForm.addEventListener("submit", function(event) {
+                event.preventDefault(); // 阻止表单的默认提交行为
+
+                const username = document.getElementById("username").value;
+                const comment = document.getElementById("comment").value;
+
+                if (username && comment) {
+                    addCommentToPage(username, comment);
+                    commentForm.reset(); // 清空表单
+                }
+            });
+
+            function addCommentToPage(username, comment) {
+                const newCommentDiv = document.createElement("div");
+                newCommentDiv.className = "comment-item";
+                newCommentDiv.innerHTML = `<p><strong>${username}:</strong> ${comment}</p>`;
+                commentsList.appendChild(newCommentDiv);
+            }
+        });
+    </script>
+</body>
+</html>
+
